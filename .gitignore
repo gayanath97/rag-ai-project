@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Local vector DB / artifacts
+chroma_db/
+
+# Jupyter / misc
+.ipynb_checkpoints/
+
+# Env files
+.env
+.env.*

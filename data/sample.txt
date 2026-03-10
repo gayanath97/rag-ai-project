@@ -1,0 +1,36 @@
+Acme Analytics – Internal Product Overview
+
+Acme Analytics is a web-based platform that helps small and medium businesses understand their sales, marketing, and customer support performance in one place. The platform connects to common data sources such as Shopify, Stripe, HubSpot, and Zendesk, then normalizes the data into a unified analytics model.
+
+Key Product Pillars
+
+1. Sales Analytics
+Acme Analytics pulls order and payment data from Shopify and Stripe. It calculates metrics such as total revenue, average order value, customer lifetime value, and churn rate. Users can create custom cohorts based on signup date, campaign source, and geography. The sales dashboard is refreshed every hour by default, with an option to increase to every 15 minutes on the Enterprise plan.
+
+2. Marketing Attribution
+The platform tracks UTM parameters and referrer information to attribute revenue to campaigns and channels. It supports first-touch, last-touch, and multi-touch attribution models. Marketing teams can compare channel performance across Google Ads, Meta Ads, and email campaigns. Acme Analytics also integrates with HubSpot to sync campaign performance back into the CRM.
+
+3. Customer Support Insights
+By integrating with Zendesk, Acme Analytics provides metrics on ticket volume, first response time, resolution time, and customer satisfaction (CSAT). Managers can view performance by agent, team, and support channel (email, chat, phone). SLA breach alerts can be configured so that if the average first response time exceeds a threshold, managers receive an email notification.
+
+4. Dashboards and Reporting
+Users can create custom dashboards by dragging and dropping charts, tables, and KPIs. Dashboards can be shared via secure links or scheduled as PDF email reports. Access controls allow admins to restrict specific dashboards to teams such as Sales, Marketing, or Support. All reports include a “data freshness” indicator so stakeholders know when the numbers were last updated.
+
+Pricing and Plans
+
+Acme Analytics offers three main plans:
+- Starter: Includes up to 2 data sources and daily data refresh. Best for early-stage startups.
+- Growth: Includes up to 5 data sources, hourly refresh, and advanced attribution models.
+- Enterprise: Includes unlimited data sources, 15-minute refresh, SSO (SAML), dedicated support, and custom SLAs.
+
+Security and Compliance
+
+Acme Analytics uses row-level security, encryption in transit (TLS 1.2+) and at rest (AES-256). Role-based access control (RBAC) allows admins to define roles such as Viewer, Analyst, and Admin. The platform is hosted on SOC 2 compliant infrastructure, and audit logs record who accessed or changed key settings. PII fields such as email addresses can be masked for non-admin users.
+
+Onboarding and Support
+
+New customers go through a guided onboarding flow that connects their data sources and suggests recommended dashboards based on industry. The help center includes step-by-step tutorials, video walkthroughs, and troubleshooting guides. Customers on the Enterprise plan receive a dedicated Customer Success Manager who provides quarterly business reviews and best practice recommendations.
+
+Summary
+
+In short, Acme Analytics centralizes revenue, marketing, and support data into a single source of truth. It is designed to help teams answer questions about growth, retention, and operational efficiency without needing a full-time data engineer.
