@@ -1,13 +1,31 @@
-from langchain_community.document_loaders import TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-# Load document
-loader = TextLoader("data/sample.txt")
-documents = loader.load()
+from langchain_community.document_loaders import (
+    DirectoryLoader,
+    PyPDFLoader,
+    TextLoader
+)
 
-# Split into chunks
+print("Loading documents...")
+
+pdf_loader = DirectoryLoader(
+    "data/pdfs",
+    glob="*.pdf",
+    loader_cls=PyPDFLoader
+)
+
+text_loader = DirectoryLoader(
+    "data/text",
+    glob="*.txt",
+    loader_cls=TextLoader
+)
+
+documents = pdf_loader.load() + text_loader.load()
+
+print(f"Loaded {len(documents)} documents")
+
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,
     chunk_overlap=50
@@ -15,16 +33,16 @@ splitter = RecursiveCharacterTextSplitter(
 
 docs = splitter.split_documents(documents)
 
-# Create embeddings
+print(f"Split into {len(docs)} chunks")
+
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-# Store vectors (Chroma auto-persists in the given directory)
-Chroma.from_documents(
+vectorstore = Chroma.from_documents(
     docs,
     embeddings,
-    persist_directory="chroma_db",
+    persist_directory="chroma_db"
 )
 
-print("Documents embedded successfully")
+print("Documents successfully indexed!")

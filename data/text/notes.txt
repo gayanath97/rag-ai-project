@@ -1,0 +1,20 @@
+Notes for RAG Project
+
+RAG (Retrieval Augmented Generation) improves AI answers by combining:
+
+1.  Document retrieval
+2.  Context injection
+3.  Large Language Model reasoning
+
+Key Components:
+
+-   Embedding Model
+-   Vector Database
+-   Retriever
+-   Prompt Template
+-   LLM
+
+Example Flow:
+
+User Question -> Embedding -> Vector Search -> Relevant Documents -> LLM
+-> Answer
